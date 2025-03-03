@@ -15,9 +15,11 @@ namespace MeuAPPMinhas_Compras.Helpers
           _conn.CreateTableAsync<Produto>().Wait();
         }
 
-    public int Insert(Produto p) 
-     { 
-        return _conn.InsertAsync(Produto p)
+    public Task <int> Insert(Produto p) 
+     {
+
+            return _conn.InsertAsync(p);
+        
      }
 
     public Task<List<Produto>> Update(Produto p) 
