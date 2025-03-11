@@ -26,7 +26,7 @@ namespace MeuAPPMinhas_Compras.Helpers
      {
             string sql = "UPDATE Produto SET Descricao=?, Quantidade=?, Preco=? WHERE id=?";
 
-            return _conn.QueryAsync<Produto>(sql, p.Descricao, p.Quantidade, p.Preço, p.Id);
+            return _conn.QueryAsync<Produto>(sql, p.Descricao, p.Quantidade, p.Preco, p.Id);
      }
 
     public Task<int> Delete(int id) 
@@ -46,7 +46,7 @@ namespace MeuAPPMinhas_Compras.Helpers
     public Task<List<Produto>> Search(string q) 
         
      {
-            string sql = "SELECT * WHERE DESCRICAO like '%%" + q + "%'";
+            string sql = "SELECT * FROM Produto WHERE descricao LIKE '%" + q + "%'";
 
             return _conn.QueryAsync<Produto>(sql);
       }
