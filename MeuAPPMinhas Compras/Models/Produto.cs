@@ -5,12 +5,13 @@ namespace MeuAPPMinhas_Compras.Models
     public class Produto
     {
         string _descricao;
-        
+       private double _quantidade;        
         
         
         [PrimaryKey, AutoIncrement]
     
         public int Id { get; set; }
+
         public string Descricao {
             get => _descricao;
                 
@@ -30,7 +31,10 @@ namespace MeuAPPMinhas_Compras.Models
 
 
         public double Quantidade { get; set; }
+
+
         public double Preco { get; set; }
+      
         public double Total { get => Quantidade * Preco; }
 
 
